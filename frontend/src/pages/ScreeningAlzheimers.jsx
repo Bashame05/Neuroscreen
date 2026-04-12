@@ -92,6 +92,24 @@ const ScreeningAlzheimers = () => {
 
                 <div style={{ display: 'grid', gridTemplateColumns: result ? '1fr 1.25fr' : '1fr 380px', gap: '4rem', alignItems: 'start', transition: 'all 0.5s ease' }}>
                     <div className="glass-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '4rem 3rem', minHeight: '450px' }}>
+                        <div style={{ 
+                            width: '100%', 
+                            padding: '1.25rem 1.75rem', 
+                            background: '#fff7ed', 
+                            border: '1px solid #FED7AA', 
+                            borderRadius: '16px', 
+                            marginBottom: '2.5rem',
+                            display: 'flex',
+                            gap: '1rem',
+                            alignItems: 'center',
+                            textAlign: 'left'
+                        }}>
+                            <AlertCircle size={24} color="#f97316" style={{ flexShrink: 0 }} />
+                            <p style={{ margin: 0, color: '#9a3412', fontSize: '0.9rem', fontWeight: 500, lineHeight: 1.5 }}>
+                                <strong style={{ fontWeight: 800, textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.5px' }}>Clinical Notice:</strong> Please upload a valid brain MRI scan only. Uploading unrelated images will produce inaccurate results. NeuroScreen is not responsible for results generated from invalid inputs.
+                            </p>
+                        </div>
+
                         {!previewUrl ? (
                             <label style={{
                                 width: '100%',
