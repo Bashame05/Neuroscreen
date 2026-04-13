@@ -114,7 +114,7 @@ const ScreeningAlzheimers = () => {
                             <label style={{
                                 width: '100%',
                                 height: '350px',
-                                border: '2px dashed #cbd5e1',
+                                border: '2px dashed var(--glass-border)',
                                 borderRadius: '24px',
                                 display: 'flex',
                                 flexDirection: 'column',
@@ -123,12 +123,12 @@ const ScreeningAlzheimers = () => {
                                 cursor: 'pointer',
                                 gap: '1.5rem',
                                 transition: 'all 0.3s ease',
-                                background: 'white'
+                                background: 'var(--bg-3)'
                             }}
                                 onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--primary)'; e.currentTarget.style.background = 'var(--primary-muted)'; }}
-                                onMouseOut={(e) => { e.currentTarget.style.borderColor = '#cbd5e1'; e.currentTarget.style.background = 'white'; }}
+                                onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--glass-border)'; e.currentTarget.style.background = 'var(--bg-3)'; }}
                             >
-                                <div style={{ padding: '1.5rem', background: '#f8fafc', borderRadius: '50%' }}>
+                                <div style={{ padding: '1.5rem', background: 'var(--glass-bg)', borderRadius: '50%' }}>
                                     <FileImage size={56} color="var(--primary)" />
                                 </div>
                                 <span style={{ color: 'var(--text-heading)', fontWeight: 700, fontSize: '1.1rem' }}>Upload imaging sample</span>
@@ -136,7 +136,7 @@ const ScreeningAlzheimers = () => {
                             </label>
                         ) : (
                             <div style={{ position: 'relative', width: '100%', textAlign: 'center' }}>
-                                <img src={previewUrl} alt="Preview" style={{ maxWidth: '100%', maxHeight: '350px', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
+                                <img src={previewUrl} alt="Preview" style={{ maxWidth: '100%', maxHeight: '350px', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
                                 <button
                                     onClick={() => { setSelectedImage(null); setPreviewUrl(null); setResult(null); }}
                                     style={{ position: 'absolute', top: '-12px', right: '-12px', background: 'var(--error)', color: 'white', border: 'none', borderRadius: '50%', width: '32px', height: '32px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', boxShadow: '0 4px 12px rgba(255, 82, 82, 0.3)' }}
@@ -187,7 +187,7 @@ const ScreeningAlzheimers = () => {
                                     {isHealthy ? "No Significant Neurological Deviation" : "Neural Pattern Deviation Identified"}
                                 </p>
 
-                                <div style={{ marginTop: '3.5rem', textAlign: 'left', width: '100%', padding: '2.5rem', background: 'white', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' }}>
+                                <div style={{ marginTop: '3.5rem', textAlign: 'left', width: '100%', padding: '2.5rem', background: 'var(--bg-3)', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' }}>
                                     <div className="flex items-center" style={{ gap: '0.75rem', color: 'var(--text-heading)', marginBottom: '2rem' }}>
                                         <Info size={22} color="var(--primary)" />
                                         <span style={{ fontWeight: 800, fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Probability Breakdown</span>
@@ -220,7 +220,7 @@ const ScreeningAlzheimers = () => {
                                                         <span style={{ color: isSelected ? 'var(--text-heading)' : 'var(--text-body)' }}>{stage}</span>
                                                         <span style={{ color: hasValue ? stageColor : 'var(--text-body)', fontWeight: 800 }}>{prob}%</span>
                                                     </div>
-                                                    <div style={{ width: '100%', height: '8px', background: '#f1f5f9', borderRadius: '4px', overflow: 'hidden' }}>
+                                                    <div style={{ width: '100%', height: '8px', background: 'var(--glass-border)', borderRadius: '4px', overflow: 'hidden' }}>
                                                         <div 
                                                             style={{
                                                                 width: hasValue ? `${prob}%` : '0%',
@@ -271,9 +271,9 @@ const ScreeningAlzheimers = () => {
                                     </button>
                                     <button
                                         onClick={() => { setResult(null); setHasSaved(false); }}
-                                        style={{ flex: 1, background: 'white', color: 'var(--text-body)', border: '1px solid #e2e8f0', borderRadius: '12px', fontSize: '0.95rem', fontWeight: 700, cursor: 'pointer', transition: 'all 0.2s' }}
-                                        onMouseEnter={(e) => e.currentTarget.style.background = '#f8fafc'}
-                                        onMouseLeave={(e) => e.currentTarget.style.background = 'white'}
+                                        style={{ flex: 1, background: 'var(--bg-3)', color: 'var(--text-body)', border: '1px solid var(--glass-border)', borderRadius: '12px', fontSize: '0.95rem', fontWeight: 700, cursor: 'pointer', transition: 'all 0.2s' }}
+                                        onMouseEnter={(e) => e.currentTarget.style.background = 'var(--glass-bg)'}
+                                        onMouseLeave={(e) => e.currentTarget.style.background = 'var(--bg-3)'}
                                     >
                                         Reset
                                     </button>
@@ -300,7 +300,7 @@ const ScreeningAlzheimers = () => {
 
                             <div className="glass-card" style={{ padding: '3rem', background: 'linear-gradient(rgba(0, 201, 167, 0.05), transparent)' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                                    <div style={{ padding: '0.75rem', background: 'white', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
+                                    <div style={{ padding: '0.75rem', background: 'var(--bg-3)', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
                                         <Activity size={24} color="var(--primary)" />
                                     </div>
                                     <h4 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 800, color: 'var(--text-heading)' }}>Neural Mapping</h4>

@@ -118,7 +118,7 @@ const ScreeningParkinsons = () => {
                                 </p>
 
                                 {result.all_scores && (
-                                    <div style={{ marginTop: '3.5rem', textAlign: 'left', width: '100%', padding: '2.5rem', background: 'white', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' }}>
+                                    <div style={{ marginTop: '3.5rem', textAlign: 'left', width: '100%', padding: '2.5rem', background: 'var(--bg-3)', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' }}>
                                         <div className="flex items-center" style={{ gap: '0.75rem', color: 'var(--text-heading)', marginBottom: '2rem' }}>
                                             <Info size={22} color="var(--primary)" />
                                             <span style={{ fontWeight: 800, fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Diagnostic Probabilities</span>
@@ -139,7 +139,7 @@ const ScreeningParkinsons = () => {
                                                             <span style={{ color: isSelected ? 'var(--text-heading)' : 'var(--text-body)' }}>{label}</span>
                                                             <span style={{ color: hasValue ? labelColor : 'var(--text-body)', fontWeight: 800 }}>{prob}%</span>
                                                         </div>
-                                                        <div style={{ width: '100%', height: '8px', background: '#f1f5f9', borderRadius: '4px', overflow: 'hidden' }}>
+                                                        <div style={{ width: '100%', height: '8px', background: 'var(--glass-border)', borderRadius: '4px', overflow: 'hidden' }}>
                                                             <div 
                                                                 style={{
                                                                     width: hasValue ? `${prob}%` : '0%',
@@ -158,7 +158,7 @@ const ScreeningParkinsons = () => {
                                     </div>
                                 )}
 
-                                <div style={{ marginTop: '3rem', textAlign: 'left', width: '100%', padding: '2.5rem', background: 'white', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' }}>
+                                <div style={{ marginTop: '3rem', textAlign: 'left', width: '100%', padding: '2.5rem', background: 'var(--bg-3)', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' }}>
                                     <div className="flex items-center" style={{ gap: '0.75rem', color: 'var(--text-heading)', marginBottom: '1.5rem' }}>
                                         <Info size={22} color="var(--primary)" />
                                         <span style={{ fontWeight: 800, fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Clinical Findings</span>
@@ -213,9 +213,9 @@ const ScreeningParkinsons = () => {
                                     </button>
                                     <button
                                         onClick={() => { setResult(null); setHasSaved(false); }}
-                                        style={{ flex: 1, background: 'white', color: 'var(--text-body)', border: '1px solid #e2e8f0', borderRadius: '12px', fontSize: '0.95rem', fontWeight: 700, cursor: 'pointer', transition: 'all 0.2s' }}
-                                        onMouseEnter={(e) => e.currentTarget.style.background = '#f8fafc'}
-                                        onMouseLeave={(e) => e.currentTarget.style.background = 'white'}
+                                        style={{ flex: 1, background: 'var(--bg-3)', color: 'var(--text-body)', border: '1px solid var(--glass-border)', borderRadius: '12px', fontSize: '0.95rem', fontWeight: 700, cursor: 'pointer', transition: 'all 0.2s' }}
+                                        onMouseEnter={(e) => e.currentTarget.style.background = 'var(--glass-bg)'}
+                                        onMouseLeave={(e) => e.currentTarget.style.background = 'var(--bg-3)'}
                                     >
                                         New Test
                                     </button>

@@ -93,7 +93,7 @@ const Dashboard = () => {
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     borderLeft: '8px solid var(--primary)',
-                    background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%)'
+                    background: 'var(--glass-bg)'
                 }}
             >
                 <div style={{ textAlign: 'center' }}>
@@ -126,7 +126,7 @@ const Dashboard = () => {
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: '3rem' }}>
-                    <div className="glass-card" style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.4)', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+                    <div className="glass-card" style={{ padding: '1.5rem', background: 'var(--glass-bg)', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
                         <div style={{ width: '45px', height: '45px', borderRadius: '12px', background: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
                             <Database size={22} />
                         </div>
@@ -136,7 +136,7 @@ const Dashboard = () => {
                         </div>
                     </div>
 
-                    <div className="glass-card" style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.4)', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+                    <div className="glass-card" style={{ padding: '1.5rem', background: 'var(--glass-bg)', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
                         <div style={{ width: '45px', height: '45px', borderRadius: '12px', background: 'var(--info)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
                             <Clock size={22} />
                         </div>
@@ -184,11 +184,11 @@ const Dashboard = () => {
                                 width: '56px', 
                                 height: '56px', 
                                 borderRadius: '14px', 
-                                background: 'rgba(255,255,255,0.8)', 
+                                background: 'var(--glass-bg)', 
                                 display: 'flex', 
                                 alignItems: 'center', 
                                 justifyContent: 'center',
-                                boxShadow: '0 4px 15px rgba(0,0,0,0.05)'
+                                boxShadow: 'var(--glass-shadow)'
                             }}>
                                 {condition.icon}
                             </div>

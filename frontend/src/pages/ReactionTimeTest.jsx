@@ -169,7 +169,7 @@ const ReactionTimeTest = () => {
                 >
                     <div style={{
                         width: '100px', height: '100px', borderRadius: '32px',
-                        background: 'white', border: '1px solid #e2e8f0',
+                        background: 'var(--bg-3)', border: '1px solid var(--glass-border)',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                         margin: '0 auto 2.5rem', boxShadow: '0 10px 25px rgba(0,0,0,0.05)'
                     }}>
@@ -204,7 +204,7 @@ const ReactionTimeTest = () => {
                     </div>
 
                     <div className="glass-card" style={{
-                        background: 'white', border: '1px solid #e2e8f0',
+                        background: 'var(--glass-bg)', border: '1px solid var(--glass-border)',
                         padding: '3rem', marginBottom: '3.5rem', textAlign: 'left'
                     }}>
                         <h4 style={{ fontSize: '1.1rem', color: 'var(--text-heading)', marginBottom: '2rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>Testing Protocol</h4>
@@ -263,8 +263,8 @@ const ReactionTimeTest = () => {
                             </span>
                         </div>
                         <div style={{
-                            width: '100%', height: '10px', background: 'white',
-                            borderRadius: '10px', overflow: 'hidden', border: '1px solid #e2e8f0'
+                            width: '100%', height: '10px', background: 'var(--glass-bg)',
+                            borderRadius: '10px', overflow: 'hidden', border: '1px solid var(--glass-border)'
                         }}>
                             <motion.div
                                 animate={{ width: `${((round + 1) / TOTAL_ROUNDS) * 100}%` }}
@@ -308,8 +308,8 @@ const ReactionTimeTest = () => {
                             }}
                             style={{
                                 width: '320px', height: '320px', borderRadius: '50%',
-                                background: circleState === 'ready' ? 'var(--primary)' : circleState === 'tooEarly' ? 'var(--error)' : 'white',
-                                border: `8px solid ${circleState === 'ready' ? 'rgba(0, 201, 167, 0.3)' : '#e2e8f0'}`,
+                                background: circleState === 'ready' ? 'var(--primary)' : circleState === 'tooEarly' ? 'var(--error)' : 'var(--bg-3)',
+                                border: `8px solid ${circleState === 'ready' ? 'rgba(0, 201, 167, 0.3)' : 'var(--glass-border)'}`,
                                 boxShadow: circleState === 'ready' ? '0 0 80px rgba(0, 201, 167, 0.4), 0 0 150px rgba(0, 201, 167, 0.15)' : '0 10px 40px rgba(0,0,0,0.05)',
                                 cursor: (circleState === 'waiting' || circleState === 'ready') ? 'pointer' : 'default',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -343,7 +343,7 @@ const ReactionTimeTest = () => {
                     </div>
 
                     {/* Previous round results */}
-                    <div className="glass-card" style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap', padding: '1.5rem', background: 'rgba(255,255,255,0.4)' }}>
+                    <div className="glass-card" style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap', padding: '1.5rem', background: 'var(--glass-bg)' }}>
                         {results.length === 0 && <span style={{ color: 'var(--text-body)', opacity: 0.5, fontSize: '0.9rem' }}>Recent trials will appear here</span>}
                         {results.map((time, i) => (
                             <motion.div
@@ -352,8 +352,8 @@ const ReactionTimeTest = () => {
                                 animate={{ scale: 1, opacity: 1 }}
                                 style={{
                                     padding: '0.5rem 1rem', borderRadius: '12px',
-                                    background: 'white',
-                                    border: `1px solid ${time < 350 ? 'rgba(0, 201, 167, 0.2)' : '#e2e8f0'}`,
+                                    background: 'var(--bg-3)',
+                                    border: `1px solid ${time < 350 ? 'rgba(0, 201, 167, 0.2)' : 'var(--glass-border)'}`,
                                     fontSize: '0.85rem', fontWeight: '700',
                                     color: time < 350 ? 'var(--primary)' : 'var(--text-heading)',
                                     boxShadow: '0 4px 10px rgba(0,0,0,0.02)'
@@ -408,7 +408,7 @@ const ReactionTimeTest = () => {
 
                     <div style={{
                         marginTop: '2.5rem', display: 'inline-flex', alignItems: 'center', gap: '1rem',
-                        background: 'white', borderRadius: '16px', border: '1px solid #e2e8f0',
+                        background: 'var(--bg-3)', borderRadius: '16px', border: '1px solid var(--glass-border)',
                         padding: '0.75rem 2.5rem', boxShadow: '0 4px 15px rgba(0,0,0,0.03)'
                     }}>
                         <span style={{ color: 'var(--text-body)', fontWeight: 600 }}>Validation Average</span>
@@ -491,7 +491,7 @@ const ReactionTimeTest = () => {
                         { label: 'Maximum Latency', value: `${stats.slowest}ms`, color: 'var(--error)' }
                     ].map((stat) => (
                         <div key={stat.label} className="glass-card" style={{
-                            padding: '2rem', textAlign: 'center', background: 'white'
+                            padding: '2rem', textAlign: 'center', background: 'var(--bg-3)'
                         }}>
                             <div style={{ color: stat.color, fontSize: '2rem', fontWeight: '900', letterSpacing: '-1px' }}>{stat.value}</div>
                             <div style={{ color: 'var(--text-body)', fontSize: '0.9rem', marginTop: '0.5rem', fontWeight: 600 }}>{stat.label}</div>
@@ -524,9 +524,9 @@ const ReactionTimeTest = () => {
                     <button
                         className="btn-primary"
                         onClick={() => navigate('/dashboard')}
-                        style={{ flex: 1, padding: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', fontSize: '1.1rem', fontWeight: 700, background: 'white', border: '1px solid #e2e8f0', color: 'var(--text-heading)' }}
-                        onMouseOver={(e) => e.currentTarget.style.background = '#f8fafc'}
-                        onMouseOut={(e) => e.currentTarget.style.background = 'white'}
+                        style={{ flex: 1, padding: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', fontSize: '1.1rem', fontWeight: 700, background: 'var(--bg-3)', border: '1px solid var(--glass-border)', color: 'var(--text-heading)' }}
+                        onMouseOver={(e) => e.currentTarget.style.background = 'var(--glass-bg)'}
+                        onMouseOut={(e) => e.currentTarget.style.background = 'var(--bg-3)'}
                     >
                         Dashboard
                     </button>

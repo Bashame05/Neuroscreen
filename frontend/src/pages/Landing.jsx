@@ -51,7 +51,7 @@ const Landing = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.3 }}
                         style={{
-                            background: 'white',
+                            background: 'var(--glass-bg)',
                             width: '100px',
                             height: '100px',
                             display: 'flex',
@@ -59,7 +59,7 @@ const Landing = () => {
                             justifyContent: 'center',
                             borderRadius: '50%',
                             marginBottom: '2.5rem',
-                            boxShadow: '0 10px 40px rgba(0, 201, 167, 0.2)',
+                            boxShadow: 'var(--glass-shadow)',
                             border: '1px solid var(--primary-muted)',
                             margin: '0 auto 2.5rem'
                         }}

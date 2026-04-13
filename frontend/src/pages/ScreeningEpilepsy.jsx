@@ -202,7 +202,7 @@ const ScreeningEpilepsy = () => {
                 >
                     <div style={{
                         width: '100px', height: '100px', borderRadius: '32px',
-                        background: 'white', border: '1px solid #e2e8f0',
+                        background: 'var(--bg-3)', border: '1px solid var(--glass-border)',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                         margin: '0 auto 2.5rem', boxShadow: '0 10px 25px rgba(0,0,0,0.05)'
                     }}>
@@ -278,8 +278,8 @@ const ScreeningEpilepsy = () => {
                             </span>
                         </div>
                         <div style={{
-                            width: '100%', height: '10px', background: 'white',
-                            borderRadius: '10px', overflow: 'hidden', border: '1px solid #e2e8f0'
+                            width: '100%', height: '10px', background: 'var(--glass-bg)',
+                            borderRadius: '10px', overflow: 'hidden', border: '1px solid var(--glass-border)'
                         }}>
                             <motion.div
                                 animate={{ width: `${progress}%` }}
@@ -304,8 +304,8 @@ const ScreeningEpilepsy = () => {
                                 exit="exit"
                                 transition={{ duration: 0.3, ease: 'easeInOut' }}
                                 style={{
-                                    background: 'rgba(255, 255, 255, 0.7)',
-                                    border: '1px solid rgba(255, 255, 255, 0.5)',
+                                    background: 'var(--glass-bg)',
+                                    border: '1px solid var(--glass-border)',
                                     borderRadius: '32px',
                                     backdropFilter: 'blur(16px)',
                                     WebkitBackdropFilter: 'blur(16px)',
@@ -355,13 +355,13 @@ const ScreeningEpilepsy = () => {
                                         onClick={() => handleAnswer(false)}
                                         style={{
                                             padding: '1.25rem 4rem', borderRadius: '16px',
-                                            background: 'white',
-                                            border: '1px solid #e2e8f0', color: 'var(--text-heading)',
+                                            background: 'var(--bg-3)',
+                                            border: '1px solid var(--glass-border)', color: 'var(--text-heading)',
                                             fontSize: '1.1rem', fontWeight: '700', cursor: 'pointer',
                                             transition: 'all 0.2s'
                                         }}
-                                        onMouseOver={(e) => { e.currentTarget.style.background = '#f8fafc'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                                        onMouseOut={(e) => { e.currentTarget.style.background = 'white'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                                        onMouseOver={(e) => { e.currentTarget.style.background = 'var(--glass-bg)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                                        onMouseOut={(e) => { e.currentTarget.style.background = 'var(--bg-3)'; e.currentTarget.style.transform = 'translateY(0)'; }}
                                     >
                                         No
                                     </button>
@@ -376,13 +376,13 @@ const ScreeningEpilepsy = () => {
                             onClick={handleBack}
                             disabled={currentQ === 0}
                             style={{
-                                background: 'white', color: currentQ === 0 ? '#cbd5e1' : 'var(--text-body)',
-                                border: '1px solid #e2e8f0', borderRadius: '12px', padding: '0.75rem 1.25rem',
+                                background: 'var(--bg-3)', color: currentQ === 0 ? 'var(--slate)' : 'var(--text-body)',
+                                border: '1px solid var(--glass-border)', borderRadius: '12px', padding: '0.75rem 1.25rem',
                                 display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', fontWeight: 700,
                                 cursor: currentQ === 0 ? 'not-allowed' : 'pointer', transition: 'all 0.2s'
                             }}
-                            onMouseOver={(e) => { if(currentQ !== 0) e.currentTarget.style.background = '#f8fafc'; }}
-                            onMouseOut={(e) => { e.currentTarget.style.background = 'white'; }}
+                            onMouseOver={(e) => { if(currentQ !== 0) e.currentTarget.style.background = 'var(--glass-bg)'; }}
+                            onMouseOut={(e) => { e.currentTarget.style.background = 'var(--bg-3)'; }}
                         >
                             <ArrowLeft size={18} /> Previous
                         </button>
@@ -399,7 +399,7 @@ const ScreeningEpilepsy = () => {
                                             ? 'var(--primary)'
                                             : i === currentQ
                                                 ? 'rgba(0, 201, 167, 0.4)'
-                                                : '#e2e8f0',
+                                                : 'var(--glass-border)',
                                         transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
                                     }}
                                 />
@@ -446,12 +446,11 @@ const ScreeningEpilepsy = () => {
                         {risk.message}
                     </p>
                     <div style={{
-                        marginTop: '2.5rem', display: 'inline-flex', alignItems: 'center', gap: '1rem',
-                        background: 'white', borderRadius: '16px', border: '1px solid #e2e8f0',
+                        background: 'var(--bg-3)', borderRadius: '16px', border: '1px solid var(--glass-border)',
                         padding: '0.75rem 2.5rem', boxShadow: '0 4px 15px rgba(0,0,0,0.03)'
                     }}>
                         <span style={{ color: 'var(--text-body)', fontWeight: 600 }}>Diagnostic Score</span>
-                        <div style={{ width: '1px', height: '20px', background: '#e2e8f0' }} />
+                        <div style={{ width: '1px', height: '20px', background: 'var(--glass-border)' }} />
                         <span style={{ color: risk.color, fontWeight: '800', fontSize: '1.5rem' }}>{totalScore}</span>
                         <span style={{ color: '#94a3b8', fontSize: '1.1rem' }}>/ 24</span>
                     </div>
@@ -472,8 +471,8 @@ const ScreeningEpilepsy = () => {
                             {flaggedQuestions.map((q) => (
                                 <div key={q.id} style={{
                                     padding: '2rem', borderRadius: '24px',
-                                    background: 'white',
-                                    border: '1px solid #e2e8f0',
+                                    background: 'var(--bg-3)',
+                                    border: '1px solid var(--glass-border)',
                                     transition: 'all 0.3s ease'
                                 }}>
                                     <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem' }}>
@@ -519,7 +518,7 @@ const ScreeningEpilepsy = () => {
                     </p>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
                         {risk.nextSteps.map((step, i) => (
-                            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', background: 'white', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
+                            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem', background: 'var(--bg-3)', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
                                 <div style={{
                                     width: '10px', height: '10px', borderRadius: '50%',
                                     background: risk.color, flexShrink: 0, boxShadow: `0 0 10px ${risk.color}40`
@@ -535,9 +534,9 @@ const ScreeningEpilepsy = () => {
                     <button
                         className="btn-primary"
                         onClick={() => navigate('/dashboard')}
-                        style={{ flex: 1, padding: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', fontSize: '1.1rem', fontWeight: 700, background: 'white', border: '1px solid #e2e8f0', color: 'var(--text-heading)' }}
-                        onMouseOver={(e) => e.currentTarget.style.background = '#f8fafc'}
-                        onMouseOut={(e) => e.currentTarget.style.background = 'white'}
+                        style={{ flex: 1, padding: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', fontSize: '1.1rem', fontWeight: 700, background: 'var(--bg-3)', border: '1px solid var(--glass-border)', color: 'var(--text-heading)' }}
+                        onMouseOver={(e) => e.currentTarget.style.background = 'var(--glass-bg)'}
+                        onMouseOut={(e) => e.currentTarget.style.background = 'var(--bg-3)'}
                     >
                         Back to Dashboard
                     </button>
@@ -555,12 +554,12 @@ const ScreeningEpilepsy = () => {
                         onClick={handleRestart}
                         style={{
                             padding: '1rem 2rem', borderRadius: '12px',
-                            background: 'transparent', border: '1px solid #cbd5e1',
+                            background: 'transparent', border: '1px solid var(--glass-border)',
                             color: 'var(--text-body)', display: 'flex', alignItems: 'center', gap: '0.75rem',
                             fontSize: '1rem', fontWeight: 600, cursor: 'pointer', transition: 'all 0.2s'
                         }}
-                        onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.02)'; e.currentTarget.style.borderColor = '#94a3b8'; }}
-                        onMouseOut={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = '#cbd5e1'; }}
+                        onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.02)'; e.currentTarget.style.borderColor = 'var(--slate)'; }}
+                        onMouseOut={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'var(--glass-border)'; }}
                     >
                         <RotateCcw size={20} /> Retake Screening
                     </button>
@@ -570,7 +569,7 @@ const ScreeningEpilepsy = () => {
                 <div style={{
                     fontSize: '0.9rem', color: 'var(--text-body)',
                     fontStyle: 'italic', textAlign: 'center', lineHeight: '1.8',
-                    padding: '3rem 2rem', borderTop: '1px solid #e2e8f0', marginTop: '4rem', opacity: 0.7
+                    padding: '3rem 2rem', borderTop: '1px solid var(--glass-border)', marginTop: '4rem', opacity: 0.7
                 }}>
                     <strong style={{ color: 'var(--text-heading)' }}>Disclaimer:</strong> This screening tool is for informational purposes only and does not constitute a medical diagnosis.
                     Results should be interpreted by a qualified neurologist. If you are experiencing a medical emergency, please call your local emergency services immediately.

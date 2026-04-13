@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Activity, LogOut, User, ChevronDown, Menu, X } from 'lucide-react';
+import { Activity, LogOut, User, ChevronDown, Menu, X, Sun, Moon } from 'lucide-react';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 
-const Navbar = () => {
+const Navbar = ({ theme, toggleTheme }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const [user, setUser] = useState(null);
@@ -75,17 +75,18 @@ const Navbar = () => {
     return (
         <nav style={{
             padding: '0.75rem 2rem',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.3)',
+            borderBottom: '1px solid var(--glass-border)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
             position: 'sticky',
             top: 0,
-            backgroundColor: 'rgba(255, 255, 255, 0.5)',
+            backgroundColor: 'var(--navbar-bg)',
             backdropFilter: 'blur(12px)',
             WebkitBackdropFilter: 'blur(12px)',
             zIndex: 1000,
-            height: '74px'
+            height: '74px',
+            transition: 'var(--transition-smooth)'
         }}>
             {/* Left Group: Logo + Desktop Links */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
@@ -132,6 +133,38 @@ const Navbar = () => {
 
             {/* Right side: Laptop/Desktop Avatar Group */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                {/* Global Theme Toggle */}
+                <button
+                    onClick={toggleTheme}
+                    style={{
+                        background: 'var(--glass-bg)',
+                        border: '1px solid var(--glass-border)',
+                        width: '40px',
+                        height: '40px',
+                        borderRadius: '12px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: 'var(--primary)',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+                    onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                >
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={theme}
+                            initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                            animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                            exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                            transition={{ duration: 0.2 }}
+                        >
+                            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+                        </motion.div>
+                    </AnimatePresence>
+                </button>
+
                 {user ? (
                     <div className="flex items-center" style={{ gap: '1rem' }}>
                         {/* Desktop Avatar */}
@@ -184,11 +217,11 @@ const Navbar = () => {
                                             top: '125%',
                                             right: 0,
                                             width: '240px',
-                                            background: 'rgba(255, 255, 255, 0.9)',
-                                            border: '1px solid rgba(0, 0, 0, 0.05)',
+                                            background: 'var(--glass-bg)',
+                                            border: '1px solid var(--glass-border)',
                                             borderRadius: '16px',
                                             padding: '0.75rem',
-                                            boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+                                            boxShadow: 'var(--glass-shadow)',
                                             backdropFilter: 'blur(20px)',
                                             zIndex: 1001
                                         }}
@@ -304,13 +337,15 @@ const Navbar = () => {
                             left: 0,
                             width: '100%',
                             height: 'calc(100vh - 74px)',
-                            background: 'rgba(255, 255, 255, 0.95)',
-                            backdropFilter: 'blur(10px)',
+                            background: 'var(--navbar-bg)',
+                            backdropFilter: 'blur(20px)',
+                            WebkitBackdropFilter: 'blur(20px)',
                             zIndex: 999,
                             padding: '2rem',
                             display: 'flex',
                             flexDirection: 'column',
-                            gap: '1.5rem'
+                            gap: '1.5rem',
+                            borderTop: '1px solid var(--glass-border)'
                         }}
                     >
                         {navLinks.map((link) => (

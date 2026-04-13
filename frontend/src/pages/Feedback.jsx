@@ -260,8 +260,8 @@ const Feedback = () => {
                                         style={{
                                             padding: '1.2rem',
                                             borderRadius: '16px',
-                                            border: `2px solid ${recommendation === opt ? 'var(--primary)' : '#e2e8f0'}`,
-                                            background: recommendation === opt ? 'var(--primary-muted)' : 'white',
+                                            border: `2px solid ${recommendation === opt ? 'var(--primary)' : 'var(--input-border)'}`,
+                                            background: recommendation === opt ? 'var(--primary-muted)' : 'var(--glass-bg)',
                                             color: recommendation === opt ? 'var(--primary)' : 'var(--text-body)',
                                             fontWeight: 700,
                                             cursor: 'pointer',
@@ -290,8 +290,8 @@ const Feedback = () => {
                                         style={{
                                             padding: '2.5rem 1.5rem',
                                             borderRadius: '24px',
-                                            border: `2px solid ${category === cat.id ? 'var(--primary)' : 'rgba(0, 201, 167, 0.1)'}`,
-                                            background: category === cat.id ? 'var(--primary-muted)' : 'rgba(255, 255, 255, 0.6)',
+                                            border: `2px solid ${category === cat.id ? 'var(--primary)' : 'var(--glass-border)'}`,
+                                            background: category === cat.id ? 'var(--primary-muted)' : 'var(--glass-bg)',
                                             display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.25rem',
                                             cursor: 'pointer', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                                             position: 'relative',
@@ -309,7 +309,7 @@ const Feedback = () => {
                                         <div style={{ 
                                             padding: '1rem',
                                             borderRadius: '16px',
-                                            background: category === cat.id ? 'white' : 'var(--primary-muted)',
+                                            background: category === cat.id ? 'var(--bg-3)' : 'var(--primary-muted)',
                                             color: 'var(--primary)',
                                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                                             boxShadow: category === cat.id ? '0 4px 12px rgba(0, 201, 167, 0.15)' : 'none',
@@ -343,8 +343,8 @@ const Feedback = () => {
                                         style={{
                                             width: '100%',
                                             padding: '1.2rem',
-                                            background: 'white',
-                                            border: '2px solid #e2e8f0',
+                                            background: 'var(--input-bg)',
+                                            border: '2px solid var(--input-border)',
                                             borderRadius: '16px',
                                             color: 'var(--text-heading)',
                                             fontSize: '1.05rem',
@@ -371,8 +371,8 @@ const Feedback = () => {
                                 placeholder="What specifically could be improved? Be as clinical or descriptive as you like."
                                 rows={6}
                                 style={{
-                                    width: '100%', padding: '1.75rem', background: 'white',
-                                    border: '2px solid #e2e8f0', borderRadius: '20px',
+                                    width: '100%', padding: '1.75rem', background: 'var(--input-bg)',
+                                    border: '2px solid var(--input-border)', borderRadius: '20px',
                                     color: 'var(--text-heading)', fontSize: '1.05rem', lineHeight: 1.8, outline: 'none',
                                     resize: 'vertical', fontFamily: 'inherit'
                                 }}
@@ -467,8 +467,8 @@ const Feedback = () => {
                                 onClick={fetchUserHistory}
                                 disabled={loadingHistory}
                                 style={{
-                                    background: 'white',
-                                    border: '1px solid #e2e8f0',
+                                    background: 'var(--glass-bg)',
+                                    border: '1px solid var(--glass-border)',
                                     borderRadius: '12px',
                                     padding: '0.75rem 1.25rem',
                                     cursor: 'pointer',
@@ -525,8 +525,8 @@ const Feedback = () => {
                                 ))}
                             </div>
                         ) : (
-                            <div style={{ padding: '4rem', textAlign: 'center', background: 'rgba(255,255,255,0.5)', border: '2px dashed #e2e8f0', borderRadius: '24px' }}>
-                                <MessageSquare size={40} color="#cbd5e1" style={{ marginBottom: '1rem' }} />
+                            <div style={{ padding: '4rem', textAlign: 'center', background: 'var(--glass-bg)', border: '2px dashed var(--glass-border)', borderRadius: '24px' }}>
+                                <MessageSquare size={40} color="var(--slate-300)" style={{ marginBottom: '1rem' }} />
                                 <p style={{ color: 'var(--text-body)', margin: 0, fontWeight: 500 }}>No recent feedback detected in your clinical profile.</p>
                             </div>
                         )}

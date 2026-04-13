@@ -201,8 +201,8 @@ const VisionContrastTest = () => {
                         <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
                             <span style={{
                                 padding: '0.6rem 1.5rem',
-                                background: 'white',
-                                border: '1px solid #e2e8f0',
+                                background: 'var(--bg-3)',
+                                border: '1px solid var(--glass-border)',
                                 borderRadius: '14px',
                                 color: 'var(--primary)',
                                 fontSize: '0.9rem',
@@ -216,7 +216,7 @@ const VisionContrastTest = () => {
                         </div>
 
                         {/* Progress bar */}
-                        <div style={{ width: '100%', height: '6px', background: '#e2e8f0', borderRadius: '3px', marginBottom: '1.5rem', overflow: 'hidden' }}>
+                        <div style={{ width: '100%', height: '6px', background: 'var(--glass-border)', borderRadius: '3px', marginBottom: '1.5rem', overflow: 'hidden' }}>
                             <div style={{
                                 width: `${((levelIndex * LETTERS_PER_LEVEL + trialIndex + 1) / (LEVELS.length * LETTERS_PER_LEVEL)) * 100}%`,
                                 height: '100%', background: 'var(--primary)', borderRadius: '3px',
@@ -237,7 +237,7 @@ const VisionContrastTest = () => {
                                 width: '320px', height: '320px', margin: '0 auto 3.5rem',
                                 backgroundColor: `rgb(${BG_GREY}, ${BG_GREY}, ${BG_GREY})`,
                                 borderRadius: '24px',
-                                border: '8px solid white',
+                                border: '8px solid var(--bg-3)',
                                 boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
                             }}>
                                 <span style={{
@@ -258,13 +258,13 @@ const VisionContrastTest = () => {
                             </h3>
 
                             {/* Choice buttons */}
-                            <div style={{
+                                <div style={{
                                 display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
                                 gap: '1.25rem', maxWidth: '400px', margin: '0 auto'
                             }}>
                                 {currentTrial.options.map((letter) => {
-                                    let bg = 'white';
-                                    let border = '1px solid #e2e8f0';
+                                    let bg = 'var(--bg-3)';
+                                    let border = '1px solid var(--glass-border)';
                                     let textColor = 'var(--text-heading)';
                                     let shadow = '0 4px 10px rgba(0,0,0,0.02)';
 
@@ -298,7 +298,7 @@ const VisionContrastTest = () => {
                                                 transform: !showFeedback ? 'scale(1)' : (letter === selected ? 'scale(1.05)' : 'scale(1)')
                                             }}
                                             onMouseOver={(e) => { if(!showFeedback) { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.borderColor = 'var(--primary)'; } }}
-                                            onMouseOut={(e) => { if(!showFeedback) { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#e2e8f0'; } }}
+                                            onMouseOut={(e) => { if(!showFeedback) { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'var(--glass-border)'; } }}
                                         >
                                             {letter}
                                         </button>
@@ -350,13 +350,13 @@ const VisionContrastTest = () => {
                                     <div key={r.percent} style={{
                                         display: 'flex', alignItems: 'center', gap: '1.5rem',
                                         padding: '1.25rem 1.5rem', borderRadius: '16px',
-                                        background: 'white', border: '1px solid #e2e8f0',
+                                        background: 'var(--bg-3)', border: '1px solid var(--glass-border)',
                                         boxShadow: '0 4px 10px rgba(0,0,0,0.02)'
                                     }}>
                                         <span style={{ width: '60px', textAlign: 'right', fontSize: '1.1rem', fontWeight: 800, color: 'var(--text-heading)' }}>
                                             {r.label}
                                         </span>
-                                        <div style={{ flex: 1, height: '8px', background: '#f1f5f9', borderRadius: '4px', overflow: 'hidden' }}>
+                                        <div style={{ flex: 1, height: '8px', background: 'var(--glass-border)', borderRadius: '4px', overflow: 'hidden' }}>
                                             <div style={{
                                                 width: '100%', height: '100%', borderRadius: '4px',
                                                 background: r.passed ? 'var(--primary)' : '#ef4444',
@@ -381,15 +381,15 @@ const VisionContrastTest = () => {
                                     <div key={level.percent} style={{
                                         display: 'flex', alignItems: 'center', gap: '1.5rem',
                                         padding: '1.25rem 1.5rem', borderRadius: '16px',
-                                        background: '#f8fafc', opacity: 0.5, border: '1px solid #e2e8f0'
+                                        background: 'var(--glass-bg)', opacity: 0.5, border: '1px solid var(--glass-border)'
                                     }}>
                                         <span style={{ width: '60px', textAlign: 'right', fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-body)' }}>
                                             {level.label}
                                         </span>
-                                        <div style={{ flex: 1, height: '8px', background: '#e2e8f0', borderRadius: '4px' }} />
+                                        <div style={{ flex: 1, height: '8px', background: 'var(--glass-border)', borderRadius: '4px' }} />
                                         <span style={{ fontSize: '1rem', color: 'var(--text-body)', width: '40px', textAlign: 'center' }}>—</span>
                                         <div style={{ 
-                                            padding: '0.4rem 0.8rem', borderRadius: '8px', background: '#f1f5f9',
+                                            padding: '0.4rem 0.8rem', borderRadius: '8px', background: 'var(--glass-border)',
                                             color: 'var(--text-body)', fontWeight: 700, fontSize: '0.85rem'
                                         }}>
                                             SKIP
@@ -403,7 +403,7 @@ const VisionContrastTest = () => {
                         <div className="glass-card" style={{
                             padding: '3rem',
                             borderLeft: `10px solid ${verdict.color}`,
-                            background: 'white'
+                            background: 'var(--bg-3)'
                         }}>
                             <h4 style={{ color: verdict.color, fontWeight: 900, marginBottom: '1rem', fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
                                 Clinical Interpretation
@@ -422,7 +422,7 @@ const VisionContrastTest = () => {
                         </div>
 
                         <div style={{
-                            marginTop: '2rem', padding: '3rem 2rem', borderTop: '1px solid #e2e8f0', 
+                            marginTop: '2rem', padding: '3rem 2rem', borderTop: '1px solid var(--glass-border)', 
                             textAlign: 'center', color: 'var(--text-body)', fontSize: '0.9rem', fontStyle: 'italic', opacity: 0.7
                         }}>
                             <strong style={{ color: 'var(--text-heading)' }}>Diagnostic Disclaimer:</strong> This metric represents longitudinal contrast sensitivity and must be 

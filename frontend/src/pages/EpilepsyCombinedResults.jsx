@@ -79,13 +79,13 @@ const EpilepsyCombinedResults = () => {
                     <button 
                         onClick={() => navigate('/dashboard')} 
                         style={{ 
-                            background: 'white', border: '1px solid #e2e8f0', borderRadius: '12px',
+                            background: 'var(--bg-3)', border: '1px solid var(--glass-border)', borderRadius: '12px',
                             color: 'var(--text-body)', display: 'flex', alignItems: 'center', gap: '0.5rem', 
                             padding: '0.6rem 1.25rem', fontSize: '0.9rem', fontWeight: 700, cursor: 'pointer',
                             boxShadow: '0 4px 10px rgba(0,0,0,0.03)', transition: 'all 0.2s'
                         }}
-                        onMouseOver={(e) => e.currentTarget.style.background = '#f8fafc'}
-                        onMouseOut={(e) => e.currentTarget.style.background = 'white'}
+                        onMouseOver={(e) => e.currentTarget.style.background = 'var(--glass-bg)'}
+                        onMouseOut={(e) => e.currentTarget.style.background = 'var(--bg-3)'}
                     >
                         <ArrowLeft size={16} /> Back to Dashboard
                     </button>
@@ -159,7 +159,7 @@ const EpilepsyCombinedResults = () => {
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                         {/* Questionnaire Card */}
                         <div className="glass-card" style={{
-                            padding: '3rem', background: 'white',
+                            padding: '3rem', background: 'var(--bg-3)',
                             borderLeft: `8px solid ${quizResult.risk === 'Low Risk' ? '#00C9A7' : (quizResult.risk === 'Moderate Risk' ? '#f59e0b' : '#ef4444')}`
                         }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
@@ -178,14 +178,14 @@ const EpilepsyCombinedResults = () => {
                                     Score: <span style={{ color: 'var(--text-heading)', fontWeight: 800 }}>{quizResult.score}</span> / 24
                                 </div>
                             </div>
-                            <div style={{ fontSize: '0.95rem', color: 'var(--text-body)', background: '#f8fafc', padding: '0.75rem 1rem', borderRadius: '10px', fontWeight: 500 }}>
+                            <div style={{ fontSize: '0.95rem', color: 'var(--text-body)', background: 'var(--glass-bg)', padding: '0.75rem 1rem', borderRadius: '10px', fontWeight: 500 }}>
                                 <span style={{ color: '#ef4444', fontWeight: 800 }}>{quizResult.flaggedQuestions?.length || 0}</span> risk indicators detected.
                             </div>
                         </div>
 
                         {/* Reaction Time Card */}
                         <div className="glass-card" style={{
-                            padding: '3rem', background: 'white',
+                            padding: '3rem', background: 'var(--bg-3)',
                             borderLeft: `8px solid ${reactionResult.risk === 'Normal' ? '#00C9A7' : (reactionResult.risk === 'Borderline' ? '#f59e0b' : '#ef4444')}`
                         }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
@@ -204,7 +204,7 @@ const EpilepsyCombinedResults = () => {
                                     Trial Average: <span style={{ color: 'var(--text-heading)', fontWeight: 800 }}>{reactionResult.avg}</span>ms
                                 </div>
                             </div>
-                            <div style={{ fontSize: '0.95rem', color: 'var(--text-body)', background: '#f8fafc', padding: '0.75rem 1rem', borderRadius: '10px', fontWeight: 500 }}>
+                            <div style={{ fontSize: '0.95rem', color: 'var(--text-body)', background: 'var(--glass-bg)', padding: '0.75rem 1rem', borderRadius: '10px', fontWeight: 500 }}>
                                 Variance: <span style={{ color: 'var(--text-heading)', fontWeight: 700 }}>{reactionResult.fastest}ms</span> – <span style={{ color: 'var(--text-heading)', fontWeight: 700 }}>{reactionResult.slowest}ms</span>
                             </div>
                         </div>
@@ -234,20 +234,20 @@ const EpilepsyCombinedResults = () => {
                                 navigate('/screening/epilepsy');
                             }}
                             style={{
-                                background: 'white', border: '1px solid #e2e8f0',
+                                background: 'var(--bg-3)', border: '1px solid var(--glass-border)',
                                 color: 'var(--text-heading)', padding: '1.25rem 2.5rem', borderRadius: '16px',
                                 display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', fontWeight: 700,
                                 boxShadow: '0 4px 15px rgba(0,0,0,0.03)', transition: 'all 0.2s'
                             }}
-                            onMouseOver={(e) => { e.currentTarget.style.background = '#f8fafc'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                            onMouseOut={(e) => { e.currentTarget.style.background = 'white'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                            onMouseOver={(e) => { e.currentTarget.style.background = 'var(--glass-bg)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                            onMouseOut={(e) => { e.currentTarget.style.background = 'var(--bg-3)'; e.currentTarget.style.transform = 'translateY(0)'; }}
                         >
                             <RotateCcw size={22} /> Retake Assessment
                         </button>
                     </div>
 
                     <div style={{
-                        marginTop: '4rem', padding: '3rem 2rem', borderTop: '1px solid #e2e8f0', 
+                        marginTop: '4rem', padding: '3rem 2rem', borderTop: '1px solid var(--glass-border)', 
                         textAlign: 'center', color: 'var(--text-body)', fontSize: '0.9rem', fontStyle: 'italic', opacity: 0.7
                     }}>
                         <strong style={{ color: 'var(--text-heading)' }}>Clinical Disclaimer:</strong> The integrative risk profile is an automated heuristic and must be validated 

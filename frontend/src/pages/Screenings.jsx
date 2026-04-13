@@ -108,8 +108,8 @@ const Screenings = () => {
                                 alignItems: 'center',
                                 gap: '0.75rem',
                                 padding: '0.8rem 1.5rem',
-                                background: 'white',
-                                border: '1px solid #e2e8f0',
+                                background: 'var(--input-bg)',
+                                border: '1px solid var(--input-border)',
                                 borderRadius: '12px',
                                 color: 'var(--text-heading)',
                                 fontWeight: 700,
@@ -141,8 +141,8 @@ const Screenings = () => {
                                         width: '100%',
                                         zIndex: 100,
                                         padding: '0.5rem',
-                                        background: 'rgba(255,255,255,0.98)',
-                                        border: '1px solid rgba(0,201,167,0.2)'
+                                        background: 'var(--glass-bg)',
+                                        border: '1px solid var(--glass-border)'
                                     }}
                                 >
                                     {['All Protocols', "Parkinson's Disease", "Alzheimer's Disease", "Epilepsy", "Multiple Sclerosis"].map(opt => (
@@ -172,7 +172,7 @@ const Screenings = () => {
                 </header>
 
                 {filteredHistory.length === 0 ? (
-                    <div style={{ textAlign: 'center', padding: '6rem 2rem', background: 'rgba(255,255,255,0.4)', borderRadius: '24px', border: '2px dashed #e2e8f0' }}>
+                    <div style={{ textAlign: 'center', padding: '6rem 2rem', background: 'var(--glass-bg)', borderRadius: '24px', border: '2px dashed var(--glass-border)' }}>
                         <ClipboardList size={48} color="var(--slate-300)" style={{ marginBottom: '1.5rem' }} />
                         <h3 style={{ fontSize: '1.5rem', color: 'var(--text-heading)', marginBottom: '0.5rem' }}>No Screenings Found</h3>
                         <p style={{ color: 'var(--text-body)' }}>{filter === 'All Protocols' ? "You haven't completed any assessments yet." : `No historical data for ${filter}.`}</p>
@@ -200,7 +200,7 @@ const Screenings = () => {
                                             justifyContent: 'space-between',
                                             padding: '1.75rem 2.5rem',
                                             borderLeft: `8px solid ${meta.color}`,
-                                            background: 'linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.6) 100%)'
+                                            background: 'var(--glass-bg)'
                                         }}
                                     >
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', flex: 1 }}>

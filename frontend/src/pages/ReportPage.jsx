@@ -176,7 +176,7 @@ const ReportPage = () => {
 
     return (
         <div style={{
-            background: isPrinting ? 'white' : 'linear-gradient(135deg, #EEF2FF 0%, #F0F9FF 50%, #FFFFFF 100%)',
+            background: isPrinting ? 'white' : 'transparent',
             minHeight: '100vh',
             padding: isPrinting ? '0' : '4rem 0 10rem',
             position: 'relative',
@@ -202,9 +202,7 @@ const ReportPage = () => {
                 {/* Controls Bar - Glassmorphism */}
                 <div className="glass-card" style={{
                     display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                    marginBottom: '3rem', padding: '1.25rem 2.5rem',
-                    border: '1px solid rgba(255, 255, 255, 0.5)',
-                    boxShadow: '0 8px 32px rgba(0,0,0,0.05)'
+                    marginBottom: '3rem', padding: '1.25rem 2.5rem'
                 }}>
                     <button onClick={() => navigate(-1)} style={{
                         display: 'flex', alignItems: 'center', gap: '0.75rem',

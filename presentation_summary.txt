@@ -1,0 +1,60 @@
+==========================================================
+              NEUROSCREEN PROJECT SUMMARY
+==========================================================
+
+1. PROJECT OVERVIEW
+NeuroScreen is a professional-grade clinical assessment platform for early neurological screening. It combines interactive diagnostic tests with state-of-the-art AI models to provide risk stratification and data-dense clinical reports for conditions like Parkinson's, Alzheimer's, Multiple Sclerosis (MS), and Epilepsy.
+
+2. TECHNOLOGY STACK
+-------------------
+FRONTEND:
+- Framework: React 19 (Vite)
+- State Management: React Context + Modern Hooks (useEffect/useState)
+- Navigation: React Router DOM v7
+- Animations: Framer Motion (for smooth, high-end transitions)
+- Icons: Lucide React (standardized clinical iconography)
+- Styling: Advanced Vanilla CSS3 (Glassmorphism, Medical Dark Mode)
+- PDF Engine: @react-pdf/renderer (Generates high-fidelity A4 reports)
+
+BACKEND:
+- Framework: Flask (Python 3.10)
+- Cross-Origin Resource Sharing: Flask-CORS
+- AI Integration: PyTorch & Hugging Face Transformers Inference
+- Models Used: Swin-Tiny Vision Transformer & SigLIP Classifier
+
+INFRASTRUCTURE:
+- Authentication: Firebase Auth (Secure User Management)
+- Database: Google Cloud Firestore (HIPAA-Ready storage)
+- Version Control: Git / GitHub
+
+3. PAGE DIRECTORY & DESCRIPTIONS
+---------------------------------
+- Landing: High-conversion homepage with branding and entry points.
+- Login: Secure entry point via Firebase Authentication.
+- Profile Setup: Initial patient onboarding (Age, Sex, Height, Weight, BMI).
+- Dashboard: Central clinical hub showing statistics, active assessments, and risk overview.
+- Screenings: Catalog of available neurological tests (PD, AD, MS, Epilepsy).
+- Screening (Parkinson's): Drawing-based motor assessment logic.
+- Screening (Alzheimer's): Medical image upload and stage classification.
+- Screening (Epilepsy): 12-question weighted cognitive quiz.
+- Screening (MS): Consolidated module for motor and vision testing.
+- Finger Tapping Test: Kinetic assessment (Taps/Sec + Inter-hand ratio).
+- Vision Contrast Test: Optical thresholding test for contrast sensitivity.
+- Reaction Time Test: Cognitive latency measurement (Response speed in MS).
+- Results (MS/Epilepsy): Multi-modal data fusion and risk stratification pages.
+- Report Page: Dynamic, professional report viewer with "Consolidated Clinical Opinion" and recommendation protocols.
+- Profile: User management and historical screening record repository.
+- Feedback: Clinical insight submission system with categorized icons and 2x3 grid.
+- Get Help: Resource hub for clinical support and user guidance.
+- About: Educational page detailing condition logic with unique thematic branding.
+
+4. KEY SYSTEM FEATURES
+----------------------
+- High-Fidelity PDF Generation: Automatically creates medical-grade documents with A4 density parity.
+- Real-time Analytics: Gauges and charts showing diagnostic marker variance.
+- Security: All patient data is encrypted and managed through secure Firebase protocols.
+- Precision Diagnostics: Custom logic for staging (Alzheimer's) and kinetic indicators (Parkinson's).
+
+==========================================================
+          NEUROSCREEN PROTOCOL - VERSION 3.1
+==========================================================

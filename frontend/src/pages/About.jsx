@@ -152,14 +152,14 @@ const About = () => {
             marginTop: '6rem',
             textAlign: 'center',
             padding: '4rem',
-            background: 'linear-gradient(rgba(0, 201, 167, 0.05), transparent)',
-            borderColor: 'rgba(0, 201, 167, 0.1)'
+            background: 'var(--glass-bg)',
+            borderColor: 'var(--glass-border)'
           }}
         >
           <div style={{
             width: '80px',
             height: '80px',
-            background: 'white',
+            background: 'var(--bg-3)',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',

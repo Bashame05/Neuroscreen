@@ -236,15 +236,15 @@ const GetHelp = () => {
                     style={{
                         padding: '6rem 4rem',
                         textAlign: 'center',
-                        background: 'linear-gradient(180deg, rgba(0, 201, 167, 0.03) 0%, white 100%)',
-                        borderColor: 'rgba(0, 201, 167, 0.1)'
+                        background: 'linear-gradient(180deg, var(--primary-muted) 0%, var(--glass-bg) 100%)',
+                        borderColor: 'var(--glass-border)'
                     }}
                 >
                     <div style={{ position: 'relative', zIndex: 1 }}>
                         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2.5rem' }}>
                             <div style={{ 
                                 padding: '1.5rem', 
-                                background: 'white', 
+                                background: 'var(--bg-3)', 
                                 borderRadius: '50%',
                                 display: 'flex',
                                 alignItems: 'center',
@@ -266,11 +266,11 @@ const GetHelp = () => {
                             gap: '3rem',
                             textAlign: 'left'
                         }}>
-                            <div style={{ background: 'white', padding: '3rem', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.03)' }}>
+                            <div style={{ background: 'var(--bg-3)', padding: '3rem', borderRadius: '24px', border: '1px solid var(--input-border)', boxShadow: '0 4px 20px rgba(0,0,0,0.03)' }}>
                                 <h3 style={{ fontSize: '0.85rem', color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '2.5px', marginBottom: '2.5rem', fontWeight: 800 }}>Global Networks</h3>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                                     {generalInternational.map((res, idx) => (
-                                        <div key={idx} style={{ paddingBottom: '2rem', borderBottom: '1px solid #f1f5f9' }}>
+                                        <div key={idx} style={{ paddingBottom: '2rem', borderBottom: '1px solid var(--glass-border)' }}>
                                             <div style={{ color: 'var(--text-heading)', fontSize: '1.4rem', fontWeight: 800, marginBottom: '0.5rem' }}>{res.contact}</div>
                                             <div style={{ color: 'var(--primary)', fontSize: '1rem', fontWeight: 700 }}>{res.name}</div>
                                             <div style={{ color: 'var(--text-body)', fontSize: '0.9rem', marginTop: '0.5rem' }}>{res.extra}</div>
@@ -278,11 +278,11 @@ const GetHelp = () => {
                                     ))}
                                 </div>
                             </div>
-                            <div style={{ background: 'white', padding: '3rem', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.03)' }}>
+                            <div style={{ background: 'var(--bg-3)', padding: '3rem', borderRadius: '24px', border: '1px solid var(--input-border)', boxShadow: '0 4px 20px rgba(0,0,0,0.03)' }}>
                                 <h3 style={{ fontSize: '0.85rem', color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '2.5px', marginBottom: '2.5rem', fontWeight: 800 }}>India Helplines</h3>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                                     {generalIndia.map((res, idx) => (
-                                        <div key={idx} style={{ paddingBottom: '2rem', borderBottom: '1px solid #f1f5f9' }}>
+                                        <div key={idx} style={{ paddingBottom: '2rem', borderBottom: '1px solid var(--glass-border)' }}>
                                             <div style={{ color: 'var(--text-heading)', fontSize: '1.4rem', fontWeight: 800, marginBottom: '0.4rem' }}>{res.contact}</div>
                                             <div style={{ color: 'var(--primary)', fontSize: '1rem', fontWeight: 700 }}>{res.name}</div>
                                             <div style={{ color: 'var(--text-body)', fontSize: '0.9rem', marginTop: '0.4rem' }}>{res.extra}</div>

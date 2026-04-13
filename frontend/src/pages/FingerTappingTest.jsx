@@ -228,8 +228,8 @@ const FingerTappingTest = () => {
                         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
                             <span style={{
                                 padding: '0.6rem 1.5rem',
-                                background: 'white',
-                                border: '1px solid #e2e8f0',
+                                background: 'var(--bg-3)',
+                                border: '1px solid var(--glass-border)',
                                 borderRadius: '14px',
                                 color: 'var(--primary)',
                                 fontSize: '0.9rem',
@@ -263,7 +263,7 @@ const FingerTappingTest = () => {
                             {/* Tap Count Badge */}
                             <div style={{ marginBottom: '4rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                 <div style={{ 
-                                    padding: '0.75rem 2rem', background: '#f8fafc', borderRadius: '16px', border: '1px solid #e2e8f0',
+                                    padding: '0.75rem 2rem', background: 'var(--bg-3)', borderRadius: '16px', border: '1px solid var(--glass-border)',
                                     display: 'flex', alignItems: 'center', gap: '1rem'
                                 }}>
                                     <Activity size={20} color="var(--primary)" />
@@ -291,8 +291,8 @@ const FingerTappingTest = () => {
                                             borderRadius: '50%',
                                             background: isRunning
                                                 ? 'linear-gradient(135deg, var(--primary), #00e0ba)'
-                                                : '#f8fafc',
-                                            border: isRunning ? 'none' : '4px dashed #e2e8f0',
+                                                : 'var(--bg-3)',
+                                            border: isRunning ? 'none' : '4px dashed var(--glass-border)',
                                             color: isRunning ? 'white' : 'var(--text-body)',
                                             fontSize: '1.8rem',
                                             fontWeight: 900,
@@ -413,7 +413,7 @@ const FingerTappingTest = () => {
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
                                 {metrics.map((metric) => (
                                     <div key={metric.label} className="glass-card" style={{
-                                        padding: '2.5rem 2rem', background: 'white', textAlign: 'center',
+                                        padding: '2.5rem 2rem', background: 'var(--bg-3)', textAlign: 'center',
                                         borderBottom: `6px solid ${metric.flagged ? '#ef4444' : '#00C9A7'}`
                                     }}>
                                         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
@@ -453,20 +453,20 @@ const FingerTappingTest = () => {
                                 </button>
                                 <button onClick={restartAll}
                                     style={{
-                                        background: 'white', border: '1px solid #e2e8f0', color: 'var(--text-heading)',
+                                        background: 'var(--bg-3)', border: '1px solid var(--glass-border)', color: 'var(--text-heading)',
                                         padding: '1.25rem 2.5rem', borderRadius: '16px', fontSize: '1.1rem', fontWeight: 700,
                                         display: 'flex', alignItems: 'center', gap: '1rem', boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
                                         transition: 'all 0.2s'
                                     }}
-                                    onMouseOver={(e) => { e.currentTarget.style.background = '#f8fafc'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                                    onMouseOut={(e) => { e.currentTarget.style.background = 'white'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                                    onMouseOver={(e) => { e.currentTarget.style.background = 'var(--glass-bg)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                                    onMouseOut={(e) => { e.currentTarget.style.background = 'var(--bg-3)'; e.currentTarget.style.transform = 'translateY(0)'; }}
                                 >
                                     <RotateCcw size={22} /> Repeat Diagnostic
                                 </button>
                             </div>
 
                             <div style={{
-                                marginTop: '3rem', padding: '3rem 2rem', borderTop: '1px solid #e2e8f0', 
+                                marginTop: '3rem', padding: '3rem 2rem', borderTop: '1px solid var(--glass-border)', 
                                 textAlign: 'center', color: 'var(--text-body)', fontSize: '0.9rem', fontStyle: 'italic', opacity: 0.7
                             }}>
                                 <strong style={{ color: 'var(--text-heading)' }}>Clinical Note:</strong> Motor velocity assessments are sensitive to exhaustion and focus. 

@@ -170,8 +170,8 @@ const Login = () => {
 const inputStyle = {
     width: '100%',
     padding: '1rem 1rem 1rem 3.2rem',
-    background: 'white',
-    border: '1px solid rgba(0, 0, 0, 0.1)',
+    background: 'var(--input-bg)',
+    border: '1px solid var(--input-border)',
     borderRadius: '12px',
     color: 'var(--text-heading)',
     fontSize: '1rem',

@@ -115,7 +115,7 @@ const MSCombinedResults = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                     {/* Tapping Test Card */}
                     <div className="glass-card" style={{
-                        padding: '3rem', background: 'white',
+                        padding: '3rem', background: 'var(--bg-3)',
                         borderLeft: `8px solid ${tappingResult ? (tappingResult.flagCount >= 2 ? '#ef4444' : tappingResult.flagCount === 1 ? '#f59e0b' : '#00C9A7') : '#cbd5e1'}`
                     }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
@@ -159,7 +159,7 @@ const MSCombinedResults = () => {
                                 </div>
                             </>
                         ) : (
-                            <div style={{ padding: '2rem', textAlign: 'center', background: '#f8fafc', borderRadius: '16px', color: 'var(--text-body)', fontStyle: 'italic', fontWeight: 500 }}>
+                            <div style={{ padding: '2rem', textAlign: 'center', background: 'var(--glass-bg)', borderRadius: '16px', color: 'var(--text-body)', fontStyle: 'italic', fontWeight: 500 }}>
                                 Kinetic data not acquired
                             </div>
                         )}
@@ -167,7 +167,7 @@ const MSCombinedResults = () => {
 
                     {/* Vision Test Card */}
                     <div className="glass-card" style={{
-                        padding: '3rem', background: 'white',
+                        padding: '3rem', background: 'var(--bg-3)',
                         borderLeft: `8px solid ${visionResult ? (visionResult.flag === 'normal' ? '#00C9A7' : visionResult.flag === 'mild' ? '#f59e0b' : '#ef4444') : '#cbd5e1'}`
                     }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
@@ -200,7 +200,7 @@ const MSCombinedResults = () => {
                                 </div>
                             </>
                         ) : (
-                            <div style={{ padding: '2rem', textAlign: 'center', background: '#f8fafc', borderRadius: '16px', color: 'var(--text-body)', fontStyle: 'italic', fontWeight: 500 }}>
+                            <div style={{ padding: '2rem', textAlign: 'center', background: 'var(--glass-bg)', borderRadius: '16px', color: 'var(--text-body)', fontStyle: 'italic', fontWeight: 500 }}>
                                 Optical data not acquired
                             </div>
                         )}
@@ -220,12 +220,12 @@ const MSCombinedResults = () => {
                     <button 
                         onClick={() => navigate('/dashboard')}
                         style={{ 
-                            background: 'white', border: '1px solid #e2e8f0', borderRadius: '16px',
+                            background: 'var(--bg-3)', border: '1px solid var(--glass-border)', borderRadius: '16px',
                             color: 'var(--text-heading)', padding: '1.25rem 2.5rem', fontSize: '1.1rem', fontWeight: 700,
                             boxShadow: '0 4px 15px rgba(0,0,0,0.03)', transition: 'all 0.2s'
                         }}
-                        onMouseOver={(e) => { e.currentTarget.style.background = '#f8fafc'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                        onMouseOut={(e) => { e.currentTarget.style.background = 'white'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                        onMouseOver={(e) => { e.currentTarget.style.background = 'var(--glass-bg)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                        onMouseOut={(e) => { e.currentTarget.style.background = 'var(--bg-3)'; e.currentTarget.style.transform = 'translateY(0)'; }}
                     >
                         Dashboard
                     </button>
@@ -252,7 +252,7 @@ const MSCombinedResults = () => {
                 </div>
 
                 <div style={{
-                    marginTop: '4rem', padding: '3rem 2rem', borderTop: '1px solid #e2e8f0', 
+                    marginTop: '4rem', padding: '3rem 2rem', borderTop: '1px solid var(--glass-border)', 
                     textAlign: 'center', color: 'var(--text-body)', fontSize: '0.9rem', fontStyle: 'italic', opacity: 0.7
                 }}>
                     <strong style={{ color: 'var(--text-heading)' }}>Diagnostic Disclaimer:</strong> Multiple Sclerosis screening represents a heuristic correlation 

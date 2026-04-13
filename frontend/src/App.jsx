@@ -29,6 +29,17 @@ const App = () => {
   const [user, setUser] = useState(null);
   const [hasProfile, setHasProfile] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState(localStorage.getItem('neuroscreen-theme') || 'light');
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('neuroscreen-theme', newTheme);
+  };
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -99,7 +110,7 @@ const App = () => {
       <div className="bg-orb orb-1"></div>
       <div className="bg-orb orb-2"></div>
       <div className="bg-grid"></div>
-      <Navbar />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       <ScrollToTop />
       <AnimatePresence mode="wait">
         <Routes>

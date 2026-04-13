@@ -226,7 +226,7 @@ const Profile = () => {
                                     fontFamily: 'var(--font-heading)',
                                     marginBottom: '0.5rem',
                                     color: 'var(--text-heading)',
-                                    background: 'rgba(255,255,255,0.5)'
+                                    background: 'var(--glass-bg)'
                                 }}
                             />
                         ) : (
@@ -245,7 +245,7 @@ const Profile = () => {
                                     onClick={handleCancel}
                                     style={{ 
                                         display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.8rem 1.5rem',
-                                        background: 'rgba(255,255,255,0.5)', color: 'var(--text-body)', border: '1px solid #e2e8f0', borderRadius: '12px'
+                                        background: 'var(--glass-bg)', color: 'var(--text-body)', border: '1px solid var(--glass-border)', borderRadius: '12px'
                                     }}
                                 >
                                     <X size={18} />
@@ -401,8 +401,8 @@ const Profile = () => {
                                                         onClick={() => toggleDiagnosis(d)}
                                                         style={{
                                                             padding: '0.5rem 1rem',
-                                                            background: isSelected ? 'var(--primary)' : 'rgba(255,255,255,0.5)',
-                                                            border: `1px solid ${isSelected ? 'var(--primary)' : '#e2e8f0'}`,
+                                                            background: isSelected ? 'var(--primary)' : 'var(--glass-bg)',
+                                                            border: `1px solid ${isSelected ? 'var(--primary)' : 'var(--glass-border)'}`,
                                                             borderRadius: '20px',
                                                             fontSize: '0.85rem',
                                                             color: isSelected ? 'white' : 'var(--text-body)',
@@ -468,7 +468,7 @@ const Profile = () => {
                                                 minHeight: '100px', 
                                                 resize: 'vertical',
                                                 fontFamily: 'inherit',
-                                                background: 'rgba(255,255,255,0.5)'
+                                                background: 'var(--glass-bg)'
                                             }}
                                             placeholder="List any ongoing medical treatments..."
                                         />
@@ -478,10 +478,10 @@ const Profile = () => {
                                             fontSize: '1rem', 
                                             marginTop: '0.75rem',
                                             fontStyle: profile.medications ? 'normal' : 'italic',
-                                            background: 'rgba(255,255,255,0.3)',
+                                            background: 'var(--glass-bg)',
                                             padding: '1.25rem',
                                             borderRadius: '12px',
-                                            border: '1px solid rgba(226, 232, 240, 0.5)',
+                                            border: '1px solid var(--glass-border)',
                                             lineHeight: '1.6'
                                         }}>
                                             {profile.medications || "No medications listed in clinical record."}
@@ -550,9 +550,9 @@ const Profile = () => {
                                     {history.map(item => (
                                         <div key={item.id} style={{ 
                                             padding: '1.25rem', 
-                                            background: 'rgba(255, 255, 255, 0.4)', 
+                                            background: 'var(--glass-bg)', 
                                             borderRadius: '16px', 
-                                            border: '1px solid rgba(226, 232, 240, 0.5)',
+                                            border: '1px solid var(--glass-border)',
                                             display: 'flex',
                                             justifyContent: 'space-between',
                                             alignItems: 'center',
@@ -631,8 +631,8 @@ const detailValueStyle = {
 };
 
 const inputStyle = {
-    background: 'rgba(255, 255, 255, 0.8)',
-    border: '1px solid #e2e8f0',
+    background: 'var(--input-bg)',
+    border: '1px solid var(--input-border)',
     borderRadius: '8px',
     color: 'var(--text-heading)',
     fontSize: '1rem',
