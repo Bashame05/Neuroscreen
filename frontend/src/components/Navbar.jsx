@@ -189,11 +189,11 @@ const Navbar = ({ theme, toggleTheme }) => {
                                     height: '32px',
                                     borderRadius: '50%',
                                     background: 'var(--primary)',
-                                    color: 'white',
+                                    color: '#0A1628',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    fontWeight: 700,
+                                    fontWeight: 800,
                                     fontSize: '0.85rem',
                                     fontFamily: 'var(--font-heading)'
                                 }}>

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-    MessageSquare, Star, Send, CheckCircle, ThumbsUp, AlertCircle, 
+import {
+    MessageSquare, Star, Send, CheckCircle, ThumbsUp, AlertCircle,
     History, EyeOff, ArrowRight, User, Globe, Activity,
     Clock, RefreshCcw, Brain, Palette, Bug, Sparkles, Accessibility
 } from 'lucide-react';
-import { 
-    collection, addDoc, serverTimestamp, query, where, 
-    orderBy, limit, getDocs, Timestamp 
+import {
+    collection, addDoc, serverTimestamp, query, where,
+    orderBy, limit, getDocs, Timestamp
 } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 
@@ -20,7 +20,7 @@ const Feedback = () => {
     const [recommendation, setRecommendation] = useState('');
     const [message, setMessage] = useState('');
     const [isAnonymous, setIsAnonymous] = useState(false);
-    
+
     // UI & Logic States
     const [submitted, setSubmitted] = useState(false);
     const [submitting, setSubmitting] = useState(false);
@@ -305,8 +305,8 @@ const Feedback = () => {
                                             background: category === cat.id ? 'var(--primary)' : 'transparent',
                                             transition: 'all 0.3s'
                                         }} />
-                                        
-                                        <div style={{ 
+
+                                        <div style={{
                                             padding: '1rem',
                                             borderRadius: '16px',
                                             background: category === cat.id ? 'var(--bg-3)' : 'var(--primary-muted)',
@@ -426,11 +426,11 @@ const Feedback = () => {
                             disabled={submitting || cooldownRemaining > 0}
                             className="btn-primary"
                             style={{
-                                width: '100%', 
+                                width: '100%',
                                 padding: '1.4rem',
                                 fontSize: '1.2rem',
                                 background: (submitting || cooldownRemaining > 0) ? '#e2e8f0' : 'var(--primary)',
-                                color: (submitting || cooldownRemaining > 0) ? '#94a3b8' : 'white',
+                                color: (submitting || cooldownRemaining > 0) ? '#94a3b8' : '#0A1628',
                                 opacity: 1
                             }}
                         >
@@ -463,7 +463,7 @@ const Feedback = () => {
                                 </div>
                                 <h2 style={{ fontSize: '2rem', color: 'var(--text-heading)', fontWeight: 800 }}>Recent Activity</h2>
                             </div>
-                            <button 
+                            <button
                                 onClick={fetchUserHistory}
                                 disabled={loadingHistory}
                                 style={{
@@ -489,14 +489,14 @@ const Feedback = () => {
 
                         {loadingHistory ? (
                             <div style={{ color: 'var(--text-body)', display: 'flex', alignItems: 'center', gap: '0.75rem', justifyContent: 'center', padding: '4rem' }}>
-                                <RefreshCcw size={20} className="animate-spin" /> 
+                                <RefreshCcw size={20} className="animate-spin" />
                                 <span style={{ fontWeight: 600 }}>Fetching secure history...</span>
                             </div>
                         ) : recentFeedback.length > 0 ? (
                             <div style={{ display: 'grid', gap: '1.5rem' }}>
                                 {recentFeedback.map((item, idx) => (
-                                    <div 
-                                        key={item.id} 
+                                    <div
+                                        key={item.id}
                                         className="glass-card"
                                         style={{ padding: '2rem 2.5rem' }}
                                     >
@@ -534,7 +534,8 @@ const Feedback = () => {
                 </div>
             </div>
 
-            <style dangerouslySetInnerHTML={{ __html: `
+            <style dangerouslySetInnerHTML={{
+                __html: `
                 .animate-spin {
                     animation: spin 1s linear infinite;
                 }

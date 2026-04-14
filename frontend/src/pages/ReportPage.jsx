@@ -212,15 +212,7 @@ const ReportPage = () => {
                         <ArrowLeft size={20} /> Back to Sequence
                     </button>
                     <div style={{ display: 'flex', gap: '1.25rem' }}>
-                        <button onClick={() => window.print()} style={{
-                            display: 'flex', alignItems: 'center', gap: '0.75rem',
-                            background: 'white', border: '1px solid #e2e8f0', borderRadius: '12px',
-                            padding: '0.8rem 1.5rem', color: 'var(--text-heading)', fontWeight: '700',
-                            fontSize: '0.9rem', cursor: 'pointer', boxShadow: '0 2px 8px rgba(0,0,0,0.02)',
-                            transition: 'all 0.2s'
-                        }} onMouseOver={(e) => { e.currentTarget.style.background = '#f8fafc'; e.currentTarget.style.transform = 'translateY(-2px)'; }} onMouseOut={(e) => { e.currentTarget.style.background = 'white'; e.currentTarget.style.transform = 'translateY(0)'; }}>
-                            <Printer size={18} /> Print Preview
-                        </button>
+
                         
                         {!loading && userData && (
                             <PDFDownloadLink 

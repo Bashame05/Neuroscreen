@@ -341,8 +341,8 @@ const ScreeningEpilepsy = () => {
                                         style={{
                                             padding: '1.25rem 4rem', borderRadius: '16px',
                                             background: 'var(--primary)',
-                                            border: 'none', color: 'white',
-                                            fontSize: '1.1rem', fontWeight: '700', cursor: 'pointer',
+                                            border: 'none', color: '#0A1628',
+                                            fontSize: '1.1rem', fontWeight: '800', cursor: 'pointer',
                                             boxShadow: '0 8px 20px rgba(0, 201, 167, 0.2)',
                                             transition: 'all 0.2s'
                                         }}

@@ -54,6 +54,8 @@
   --bg-2: #1A2744;
   --bg-3: #0A1628;
 
+  --primary-glow: rgba(0, 201, 167, 0.15);
+
   --navbar-bg: rgba(10, 22, 40, 0.8);
   --input-bg: #1A2744;
   --input-border: rgba(255, 255, 255, 0.1);
@@ -183,16 +185,16 @@ button {
 
 .btn-primary {
   background: var(--primary);
-  color: white;
+  color: #0A1628;
   padding: 0.75rem 1.5rem;
   border-radius: 12px;
-  font-weight: 600;
+  font-weight: 800; /* Increased weight slightly for even better legibility */
   box-shadow: 0 4px 14px 0 var(--primary-glow);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 201, 167, 0.3);
+  box-shadow: 0 6px 20px var(--primary-glow);
 }
 
 .btn-secondary {
