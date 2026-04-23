@@ -159,7 +159,7 @@ const ScreeningEpilepsy = () => {
             }, 0);
             const finalFlags = questions.filter(q => newAnswers[q.id] === true);
             const finalRisk = getRiskLevel(finalScore);
-            
+
             localStorage.setItem('neuroscreen_epilepsy_quiz', JSON.stringify({
                 score: finalScore,
                 risk: finalRisk.level,
@@ -355,13 +355,14 @@ const ScreeningEpilepsy = () => {
                                         onClick={() => handleAnswer(false)}
                                         style={{
                                             padding: '1.25rem 4rem', borderRadius: '16px',
-                                            background: 'var(--bg-3)',
-                                            border: '1px solid var(--glass-border)', color: 'var(--text-heading)',
-                                            fontSize: '1.1rem', fontWeight: '700', cursor: 'pointer',
+                                            background: 'var(--primary)',
+                                            border: 'none', color: '#0A1628',
+                                            fontSize: '1.1rem', fontWeight: '800', cursor: 'pointer',
+                                            boxShadow: '0 8px 20px rgba(0, 201, 167, 0.2)',
                                             transition: 'all 0.2s'
                                         }}
-                                        onMouseOver={(e) => { e.currentTarget.style.background = 'var(--glass-bg)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                                        onMouseOut={(e) => { e.currentTarget.style.background = 'var(--bg-3)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                                        onMouseOver={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 12px 25px rgba(0, 201, 167, 0.3)'; }}
+                                        onMouseOut={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 201, 167, 0.2)'; }}
                                     >
                                         No
                                     </button>
@@ -381,7 +382,7 @@ const ScreeningEpilepsy = () => {
                                 display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', fontWeight: 700,
                                 cursor: currentQ === 0 ? 'not-allowed' : 'pointer', transition: 'all 0.2s'
                             }}
-                            onMouseOver={(e) => { if(currentQ !== 0) e.currentTarget.style.background = 'var(--glass-bg)'; }}
+                            onMouseOver={(e) => { if (currentQ !== 0) e.currentTarget.style.background = 'var(--glass-bg)'; }}
                             onMouseOut={(e) => { e.currentTarget.style.background = 'var(--bg-3)'; }}
                         >
                             <ArrowLeft size={18} /> Previous
