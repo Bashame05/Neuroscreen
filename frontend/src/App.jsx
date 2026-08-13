@@ -48,7 +48,8 @@ const App = () => {
         try {
           const profileSnap = await getDoc(doc(db, 'users', currentUser.uid));
           setHasProfile(profileSnap.exists());
-        } catch {
+        } catch (error) {
+          console.error("Firestore read error on auth change:", error);
           setHasProfile(false);
         }
       } else {
